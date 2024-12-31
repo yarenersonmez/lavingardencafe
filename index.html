@@ -5,6 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lavin Garden Cafe - Menu</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-y: auto;
+        }
+
+        .background-overlay {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            padding: 20px 0;
+            background-color: #1e1e1e;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .category {
+            width: 300px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .category img {
+            width: 100%;
+            height: auto;
+        }
+
+        .category h2 {
+            margin: 0;
+            padding: 10px;
+            background-color: #2a2a2a;
+        }
+
+        .menu {
+            display: none;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .menu .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .menu .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .back:hover {
+            background-color: #3a3a3a;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .category {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="background-overlay">
