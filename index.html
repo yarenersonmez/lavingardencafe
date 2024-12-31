@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             background-color: #121212;
             color: #ffffff;
-            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         .background-overlay {
@@ -23,6 +23,9 @@
             margin: 0;
             padding: 20px 0;
             background-color: #1e1e1e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .categories {
@@ -39,6 +42,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
         }
 
         .category img {
@@ -61,6 +65,10 @@
             width: 90%;
             max-width: 600px;
             text-align: left;
+        }
+
+        .menu.active {
+            display: block;
         }
 
         .menu .menu-item {
@@ -90,10 +98,6 @@
             background-color: #3a3a3a;
         }
 
-        .hidden {
-            display: none;
-        }
-
         @media (max-width: 768px) {
             .category {
                 width: 90%;
@@ -108,27 +112,21 @@
         </header>
         <main>
             <div class="categories">
-                <div class="category" id="food">
-                    <a href="#menu-food">
-                        <img src="food.jpg" alt="Yiyecekler">
-                        <h2>Yiyecekler</h2>
-                    </a>
+                <div class="category" onclick="showMenu('menu-food')">
+                    <img src="food.jpg" alt="Yiyecekler">
+                    <h2>Yiyecekler</h2>
                 </div>
-                <div class="category" id="drinks">
-                    <a href="#menu-drinks">
-                        <img src="drinks.jpg" alt="İçecekler">
-                        <h2>İçecekler</h2>
-                    </a>
+                <div class="category" onclick="showMenu('menu-drinks')">
+                    <img src="drinks.jpg" alt="İçecekler">
+                    <h2>İçecekler</h2>
                 </div>
-                <div class="category" id="desserts">
-                    <a href="#menu-desserts">
-                        <img src="desserts.jpg" alt="Tatlılar">
-                        <h2>Tatlılar</h2>
-                    </a>
+                <div class="category" onclick="showMenu('menu-desserts')">
+                    <img src="desserts.jpg" alt="Tatlılar">
+                    <h2>Tatlılar</h2>
                 </div>
             </div>
 
-            <div id="menu-food" class="menu hidden">
+            <div id="menu-food" class="menu">
                 <h2>Yiyecekler</h2>
                 <div class="menu-item">
                     <h3>Izgara Tavuk</h3>
@@ -142,10 +140,10 @@
                     <h3>Sebzeli Makarna</h3>
                     <span>100 TL</span>
                 </div>
-                <a href="#" class="back">Geri Dön</a>
+                <a href="#" class="back" onclick="hideMenu('menu-food')">Geri Dön</a>
             </div>
 
-            <div id="menu-drinks" class="menu hidden">
+            <div id="menu-drinks" class="menu">
                 <h2>İçecekler</h2>
                 <div class="menu-item">
                     <h3>Türk Kahvesi</h3>
@@ -159,10 +157,10 @@
                     <h3>Çay</h3>
                     <span>20 TL</span>
                 </div>
-                <a href="#" class="back">Geri Dön</a>
+                <a href="#" class="back" onclick="hideMenu('menu-drinks')">Geri Dön</a>
             </div>
 
-            <div id="menu-desserts" class="menu hidden">
+            <div id="menu-desserts" class="menu">
                 <h2>Tatlılar</h2>
                 <div class="menu-item">
                     <h3>Cheesecake</h3>
@@ -176,9 +174,20 @@
                     <h3>Dondurma</h3>
                     <span>35 TL</span>
                 </div>
-                <a href="#" class="back">Geri Dön</a>
+                <a href="#" class="back" onclick="hideMenu('menu-desserts')">Geri Dön</a>
             </div>
         </main>
     </div>
+
+    <script>
+        function showMenu(menuId) {
+            document.querySelectorAll('.menu').forEach(menu => menu.classList.remove('active'));
+            document.getElementById(menuId).classList.add('active');
+        }
+
+        function hideMenu(menuId) {
+            document.getElementById(menuId).classList.remove('active');
+        }
+    </script>
 </body>
 </html>
