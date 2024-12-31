@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lavin Garden Cafe - Menu</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="background-overlay">
@@ -13,14 +12,53 @@
             <h1>Lavin Garden Cafe</h1>
         </header>
         <main>
-            <nav class="menu-categories">
-                <button onclick="showCategory('food')">Yiyecekler</button>
-                <button onclick="showCategory('drinks')">İçecekler</button>
-                <button onclick="showCategory('desserts')">Tatlılar</button>
-            </nav>
-            <section id="menu-content">
-                <!-- Menu items will be dynamically inserted here -->
-            </section>
+            <div class="menu-categories">
+                <div class="category">
+                    <h2>Yiyecekler</h2>
+                    <div class="menu-item">
+                        <h3>Izgara Tavuk</h3>
+                        <span>120 TL</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Köfte Tabağı</h3>
+                        <span>140 TL</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Sebzeli Makarna</h3>
+                        <span>100 TL</span>
+                    </div>
+                </div>
+                <div class="category">
+                    <h2>İçecekler</h2>
+                    <div class="menu-item">
+                        <h3>Türk Kahvesi</h3>
+                        <span>30 TL</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Latte</h3>
+                        <span>40 TL</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Çay</h3>
+                        <span>20 TL</span>
+                    </div>
+                </div>
+                <div class="category">
+                    <h2>Tatlılar</h2>
+                    <div class="menu-item">
+                        <h3>Cheesecake</h3>
+                        <span>50 TL</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Tiramisu</h3>
+                        <span>55 TL</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Dondurma</h3>
+                        <span>35 TL</span>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
